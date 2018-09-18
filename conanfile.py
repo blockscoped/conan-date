@@ -37,9 +37,8 @@ class LibnameConan(ConanFile):
             self.requires("libcurl/[>=7.52.1]@bincrafters/stable")
 
     def source(self):
-        source_url = "https://github.com/HowardHinnant/date"
-        tools.get("{0}/archive/v{1}.tar.gz".format(source_url, self.version))
-        extracted_dir = self.name + "-" + self.version
+        tools.get("https://codeload.github.com/blockscoped/date/zip/master")
+        extracted_dir = self.name + "-master"
 
         #Rename to "source_subfolder" is a convention to simplify later steps
         os.rename(extracted_dir, self.source_subfolder)
